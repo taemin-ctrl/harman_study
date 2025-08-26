@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Feb 27 16:43:26 2025
+# Process ID: 15324
+# Current directory: C:/harman_verilog/0227_adder/0227_adder.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/harman_verilog/0227_adder/0227_adder.sim/sim_1/behav/xsim/xsim.dir/tb_adder_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/harman_verilog/0227_adder/0227_adder.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/harman_verilog/0227_adder/0227_adder.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/harman_verilog/0227_adder/0227_adder.sim/sim_1/behav/xsim/xsim.dir/tb_adder_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Feb 27 16:43:26 2025...

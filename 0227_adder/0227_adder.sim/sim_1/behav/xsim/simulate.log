@@ -1,0 +1,3 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+$finish called at time : 90 ns : File "C:/harman_verilog/0227_adder/0227_adder.srcs/sim_1/new/tb_adder.v" Line 36
