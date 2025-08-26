@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Mar  4 16:32:41 2025
+# Process ID: 10168
+# Current directory: C:/harman_verilog/0304_adder/0304_adder.runs/synth_1
+# Command line: vivado.exe -log fnd_controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fnd_controller.tcl
+# Log file: C:/harman_verilog/0304_adder/0304_adder.runs/synth_1/fnd_controller.vds
+# Journal file: C:/harman_verilog/0304_adder/0304_adder.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source fnd_controller.tcl -notrace
