@@ -1,0 +1,42 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-311,-175",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port sys_clock -pg 1 -lvl 0 -x 0 -y 170 -defaultsOSRD
+preplace port reset_rtl -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace port TMDS_CLK_P_0 -pg 1 -lvl 5 -x 1120 -y 180 -defaultsOSRD
+preplace port TMDS_CLK_N_0 -pg 1 -lvl 5 -x 1120 -y 140 -defaultsOSRD
+preplace portBus TMDS_DATA_P_0 -pg 1 -lvl 5 -x 1120 -y 200 -defaultsOSRD
+preplace portBus TMDS_DATA_N_0 -pg 1 -lvl 5 -x 1120 -y 160 -defaultsOSRD
+preplace inst clk_wiz -pg 1 -lvl 1 -x 110 -y 160 -defaultsOSRD
+preplace inst rst_clk_wiz_100M -pg 1 -lvl 2 -x 380 -y 110 -defaultsOSRD
+preplace inst hdmi_tx_0 -pg 1 -lvl 4 -x 940 -y 160 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -x 650 -y 70 -defaultsOSRD
+preplace inst rom_0 -pg 1 -lvl 3 -x 650 -y 320 -defaultsOSRD
+preplace netloc clk_wiz_clk_out1 1 1 3 200 10 550 10 780
+preplace netloc clk_wiz_locked 1 1 1 210 150n
+preplace netloc rst_clk_wiz_100M_peripheral_aresetn 1 2 2 560 130 NJ
+preplace netloc sys_clock_1 1 0 1 NJ 170
+preplace netloc reset_rtl_1 1 0 2 20 90 NJ
+preplace netloc rom_0_red 1 3 1 740 150n
+preplace netloc rom_0_green 1 3 1 760 170n
+preplace netloc rom_0_blue 1 3 1 770 190n
+preplace netloc rom_0_h_sync 1 3 1 750 210n
+preplace netloc rom_0_v_sync 1 3 1 780 230n
+preplace netloc hdmi_tx_0_TMDS_DATA_P 1 4 1 NJ 200
+preplace netloc hdmi_tx_0_TMDS_CLK_P 1 4 1 NJ 180
+preplace netloc hdmi_tx_0_TMDS_DATA_N 1 4 1 NJ 160
+preplace netloc hdmi_tx_0_TMDS_CLK_N 1 4 1 NJ 140
+preplace netloc xlconstant_0_dout 1 3 1 740J 70n
+preplace netloc rom_0_en 1 3 1 N 250
+levelinfo -pg 1 0 110 380 650 940 1120
+pagesize -pg 1 -db -bbox -sgen -120 0 1320 450
+"
+}
+{
+   "da_board_cnt":"3",
+   "da_clkrst_cnt":"1"
+}
