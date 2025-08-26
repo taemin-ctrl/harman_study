@@ -1,0 +1,6 @@
+2025-05-14T09:05:19.09019200255-09:05:19 **** Incremental Build of configuration Debug for project hello_world ****
+000-make all 
+000-make: Nothing to be done for 'all'.
+00255-
+09:05:19 Build Finished (took 107ms)
+
