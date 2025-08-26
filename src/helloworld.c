@@ -1,56 +1,56 @@
 #include <stdio.h>
-#include <stdint.h>
 #include "platform.h"
 #include "xil_printf.h"
-#include "xparameters.h"
 #include "sleep.h"
 
-typedef struct{
-	volatile uint32_t DR;
-	volatile uint32_t CR;
-} GPIOA_TypeDef;
+#define __IO volatile
 
-typedef struct{
-	volatile uint32_t MODER;
-	volatile uint32_t ODR;
-	volatile uint32_t IDR;
-} GPIOB_TypeDef;
+typedef struct {
+   __IO uint32_t CR;
+   __IO uint32_t SOD;
+   __IO uint32_t SID;
+   __IO uint32_t SR;
+}AXI4_TypeDef;
 
-#define GPIOA_BASEADDR 0x40000000U
-#define GPIOA 	((GPIOA_TypeDef *)GPIOA_BASEADDR)
-
-#define GPIOB_BASEADDR 0x44A00000U
-#define GPIOB 	((GPIOB_TypeDef *)GPIOB_BASEADDR)
-
-//#define GPIO_DR 	  *(volatile uint32_t *)(GPIO_BASEADDR +0x00)
-//#define GPIO_CR 	  *(volatile uint32_t *)(GPIO_BASEADDR +0x04)
-
-int switch_getstate(GPIOA_TypeDef *GPIOx, int bit);
+#define AXI4_BASEADDR      0x44a00000U
+#define AXI4            ((AXI4_TypeDef *) AXI4_BASEADDR)
 
 int main()
 {
-	int counter = 0;
-	//GPIO_CR = 0xff00; // *(volatile uint32_t *)(GPIO_BASEADDR +0x00) = 0xff00
-	GPIOA ->CR = 0xff00;
-	GPIOB -> MODER = 0x0f;
+   AXI4 -> CR = 0;
 
-	while(1){
-		xil_printf("counter : %d\n", counter++);
-		if (switch_getstate(GPIOA, 13)){
-			GPIOA -> DR ^= 0xf0;
+   int temp=0;
+   int sid_data;
+   int sod_data;
 
-		}
-		if (switch_getstate(GPIOA, 8)){
-			GPIOA -> DR ^= 0x0f;
-		}
-		GPIOB -> ODR ^= 0x0f;
-		usleep(300000);
-	}
-	return 0;
-}
+   while(1){
+      AXI4 -> SOD = 0x80; // 값 주기
+      AXI4 -> CR = 1;      // 시작
+      AXI4 -> CR = 0;      // start reg off
 
-int switch_getstate(GPIOA_TypeDef *GPIOx, int bit){
-	int temp;
-	temp = GPIOx->DR & (1U << bit);
-	return (temp == 0) ? 0 : 1;
+      //while ( ((AXI4-> SR) != 1) ){}
+      usleep(300000);
+      AXI4 -> SOD = 0xa1; // 값 주기
+      AXI4 -> CR = 1;      // 시작
+      AXI4 -> CR = 0;      // start reg off
+      usleep(300000);
+
+      AXI4 -> SOD = 0x00; // 값 주기
+            AXI4 -> CR = 1;      // 시작
+            AXI4 -> CR = 0;      // start reg off
+
+            //while ( ((AXI4-> SR) != 1) ){}
+            usleep(300000);
+
+
+      //while ( ((AXI4-> SR) != 1) ){}
+
+      sid_data = AXI4 -> SID;
+      sod_data = AXI4 -> SOD;
+      xil_printf(" sid_Data : %d\n", sid_data);
+      xil_printf(" sod_Data : %d\n", sod_data);
+      temp ++;
+      usleep(300000);
+   }
+      return 0;
 }
